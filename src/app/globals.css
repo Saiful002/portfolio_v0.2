@@ -5,6 +5,7 @@
     --bg-dark: #08090b;
     --bg-card: #12141a;
     --accent-neon: #b0e739;
+    --accent-glow: rgba(176, 231, 57, 0.3);
     --text-slate: #8c9aa7;
     --text-white: #ffffff;
   }
@@ -25,7 +26,6 @@
       radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
     background-size: 100% 100%, 100% 100%, 28px 28px;
     color: #ffffff;
-    overflow-x: hidden;
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -46,8 +46,29 @@
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #b0e739;
+    background: var(--accent-neon);
   }
+}
+
+/* Global Single Source of Truth Accent Utility Classes */
+.text-accent {
+  color: var(--accent-neon) !important;
+}
+
+.bg-accent {
+  background-color: var(--accent-neon) !important;
+}
+
+.border-accent {
+  border-color: var(--accent-neon) !important;
+}
+
+.fill-accent {
+  fill: var(--accent-neon) !important;
+}
+
+.glow-accent {
+  box-shadow: 0 0 25px var(--accent-glow) !important;
 }
 
 /* Glassmorphism & Neon Cards */
@@ -55,7 +76,7 @@
   background: rgba(18, 20, 26, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(176, 231, 57, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .glass-card-neon {
@@ -68,30 +89,13 @@
 
 .glass-card-neon:hover {
   background: rgba(24, 28, 36, 0.9);
-  border-color: rgba(176, 231, 57, 0.4);
-  box-shadow: 0 10px 35px -10px rgba(176, 231, 57, 0.18);
+  border-color: var(--accent-neon);
+  box-shadow: 0 10px 35px -10px var(--accent-glow);
   transform: translateY(-3px);
 }
 
-/* Neon Text & Background Helpers */
-.text-neon {
-  color: #b0e739;
-}
-
-.bg-neon {
-  background-color: #b0e739;
-}
-
-.border-neon {
-  border-color: #b0e739;
-}
-
 .text-slate-muted {
-  color: #8c9aa7;
-}
-
-.glow-neon-box {
-  box-shadow: 0 0 30px -5px rgba(176, 231, 57, 0.3);
+  color: var(--text-slate);
 }
 
 /* Infinite Marquee Animation */

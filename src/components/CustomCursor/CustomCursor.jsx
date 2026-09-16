@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 
 export default function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: -100, y: -100 });
+  const dotRef = useRef(null);
+  const ringRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -12,8 +12,17 @@ export default function CustomCursor() {
     document.body.classList.add('custom-cursor-active');
 
     const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      const { clientX: x, clientY: y } = e;
       if (!isVisible) setIsVisible(true);
+
+      if (dotRef.current) {
+        dotRef.current.style.transform = `translate3d(${x - 4}px, ${y - 4}px, 0)`;
+      }
+
+      if (ringRef.current) {
+        const offset = isHovered ? 20 : 12;
+        ringRef.current.style.transform = `translate3d(${x - offset}px, ${y - offset}px, 0)`;
+      }
     };
 
     const handleMouseOver = (e) => {
@@ -43,34 +52,25 @@ export default function CustomCursor() {
       document.removeEventListener('mouseleave', handleMouseLeave);
       document.body.classList.remove('custom-cursor-active');
     };
-  }, [isVisible]);
+  }, [isVisible, isHovered]);
 
   if (!isVisible) return null;
 
   return (
     <div className="pointer-events-none fixed inset-0 z-50 overflow-hidden hidden lg:block">
-      {/* Outer Ring */}
-      <motion.div
-        className="fixed top-0 left-0 rounded-full border border-[#b0e739]/60 pointer-events-none"
-        animate={{
-          x: mousePosition.x - (isHovered ? 20 : 12),
-          y: mousePosition.y - (isHovered ? 20 : 12),
-          width: isHovered ? 40 : 24,
-          height: isHovered ? 40 : 24,
-          backgroundColor: isHovered ? 'rgba(176, 231, 57, 0.15)' : 'rgba(255, 255, 255, 0.02)',
-          borderColor: isHovered ? '#b0e739' : 'rgba(176, 231, 57, 0.5)',
-        }}
-        transition={{ type: 'spring', damping: 20, stiffness: 400, mass: 0.1 }}
+      {/* Outer Ring using CSS variable */}
+      <div
+        ref={ringRef}
+        className={`fixed top-0 left-0 rounded-full border pointer-events-none transition-all duration-75 ease-out ${
+          isHovered ? 'w-10 h-10 bg-[#b0e739]/15 border-accent' : 'w-6 h-6 bg-transparent border-accent opacity-70'
+        }`}
+        style={{ willChange: 'transform', borderColor: 'var(--accent-neon)' }}
       />
-      {/* Inner Dot */}
-      <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-[#b0e739] rounded-full pointer-events-none shadow-[0_0_8px_#b0e739]"
-        animate={{
-          x: mousePosition.x - 4,
-          y: mousePosition.y - 4,
-          scale: isHovered ? 1.4 : 1,
-        }}
-        transition={{ type: 'spring', damping: 25, stiffness: 500, mass: 0.05 }}
+      {/* Inner Dot using CSS variable */}
+      <div
+        ref={dotRef}
+        className="fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none bg-accent glow-accent"
+        style={{ willChange: 'transform' }}
       />
     </div>
   );

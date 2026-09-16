@@ -7,7 +7,7 @@ import { Points, PointMaterial } from '@react-three/drei';
 function NeonParticleGrid() {
   const ref = useRef(null);
 
-  const count = 900;
+  const count = 800;
   const positions = useMemo(() => {
     const pos = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
@@ -34,7 +34,7 @@ function NeonParticleGrid() {
           size={0.03}
           sizeAttenuation={true}
           depthWrite={false}
-          opacity={0.5}
+          opacity={0.45}
         />
       </Points>
     </group>

@@ -37,34 +37,6 @@ export const servicesData = [
     description: "End-to-end web application development using React, Next.js, Node.js, Express, MongoDB, and JavaScript.",
     features: ["Next.js App Router", "REST & GraphQL APIs", "Database Architecture", "Secure Authentication & Payments"],
     popular: true
-  },
-  {
-    id: "wordpress",
-    title: "WordPress Development",
-    iconName: "Globe",
-    description: "Custom WordPress themes, WooCommerce online stores, custom Elementor widgets, and security hardening.",
-    features: ["Custom Theme & Plugin Dev", "WooCommerce Integration", "Speed Optimization", "Custom Post Types & Gutenberg"],
-  },
-  {
-    id: "landing",
-    title: "Landing Pages & UI/UX",
-    iconName: "Layout",
-    description: "High-converting, pixel-perfect responsive landing pages with rich GSAP animations and micro-interactions.",
-    features: ["GSAP & Framer Motion", "3D WebGL / Three.js Touch", "High-Converting Layouts", "A/B Test Ready"],
-  },
-  {
-    id: "optimization",
-    title: "Website Optimization",
-    iconName: "Zap",
-    description: "Performance tuning to achieve 90+ Lighthouse scores, fast page load times, and smooth 60fps animations.",
-    features: ["Lighthouse 90+ Score", "Core Web Vitals Fixes", "Asset & Image Compression", "JS Bundle Reduction"],
-  },
-  {
-    id: "seo",
-    title: "SEO & Technical Growth",
-    iconName: "Search",
-    description: "On-page SEO optimization, structured data schema, automated sitemaps, and technical search visibility.",
-    features: ["Technical SEO Audit", "Structured JSON-LD Schema", "Semantic HTML5", "Meta & OpenGraph Setup"],
   }
 ];
 
@@ -163,57 +135,40 @@ export const projectsData = [
 
 export const experiencesData = [
   {
-    id: "freelance-lead",
-    company: "Freelance & Client Projects",
-    role: "Lead Full Stack & Shopify Developer",
-    location: "Remote / Global",
-    period: "2023 - Present",
+    id: "softvence-omega",
+    company: "SOFTVENCE OMEGA",
+    role: "WEB DEVELOPER | SHOPIFY & CUSTOM LIQUID EXPERT",
+    location: "Ambon Complex, Mohakhali, Dhaka 1212",
+    period: "Feb 2026 – Current",
     description: [
-      "Designed and developed custom Shopify themes, WordPress platforms, and Next.js applications for international clients.",
-      "Engineered high-converting e-commerce storefronts with custom Liquid sections, custom AJAX carts, and mobile optimization.",
-      "Optimized web application performance, achieving Core Web Vitals Lighthouse scores of 90+ across client platforms."
+      "Building and customizing high-performance Shopify stores using Custom Liquid, theme development, and tailored eCommerce solutions.",
+      "Leading the development team, providing technical guidance, and ensuring the successful delivery of client projects."
     ],
-    technologies: ["Shopify", "Liquid", "Next.js", "React", "Tailwind CSS", "WordPress", "Node.js"]
+    technologies: ["Shopify", "Custom Liquid", "JavaScript", "Theme Dev", "eCommerce", "Team Lead"]
   },
   {
-    id: "gub-tech",
-    company: "Green University Programming Contest",
-    role: "Full Stack Web Lead",
-    location: "Dhaka, Bangladesh",
-    period: "2024 - 2025",
+    id: "sardar-it",
+    company: "SARDAR IT",
+    role: "WEB DEVELOPER",
+    location: "Plot- 30/A, Road-06, Rupnagar, Mirpur, Dhaka-1216",
+    period: "May 2025 – Feb 2026",
     description: [
-      "Architected and deployed the official GUB IDPC 2025 website for international programming and debate participants.",
-      "Implemented responsive registration flows, interactive event schedules, and sponsor portals.",
-      "Collaborated with university contest coordinators to ensure zero downtime during high-traffic contest periods."
+      "Working full-time as a Web Developer at Sardarit, specializing in the Shopify department.",
+      "Responsible for building and customizing Shopify websites, developing web-based solutions, and leading a development team to deliver high-quality eCommerce projects."
     ],
-    technologies: ["Next.js", "Tailwind CSS", "JavaScript", "Vercel", "Git"]
-  }
-];
-
-export const testimonialsData = [
-  {
-    id: "1",
-    name: "Dr. A. Rahman",
-    role: "Contest Convener",
-    company: "GUB IDPC 2025",
-    content: "Saiful delivered the GUB IDPC 2025 platform beyond our expectations. The platform was super fast, highly accessible on mobile, and handled contestant registrations seamlessly!",
-    rating: 5
+    technologies: ["Shopify", "Web Development", "Liquid", "Team Lead"]
   },
   {
-    id: "2",
-    name: "Marcus Vance",
-    role: "E-Commerce Founder",
-    company: "Luxe Retail Co.",
-    content: "Our store's conversion rate increased significantly after Saiful overhauled our Shopify theme. His mastery of Liquid and custom features is unmatched!",
-    rating: 5
-  },
-  {
-    id: "3",
-    name: "Sarah Jenkins",
-    role: "Digital Marketing Lead",
-    company: "Apex Agency",
-    content: "Saiful is a rare developer who understands both aesthetic design and technical code quality. His Next.js & GSAP work is breathtaking.",
-    rating: 5
+    id: "sns-communication",
+    company: "SNS COMMUNICATION",
+    role: "EXECUTIVE OFFICER",
+    location: "Narayanganj, Bangladesh",
+    period: "Feb 2023 – July 2023",
+    description: [
+      "Worked part-time as an Executive Officer, handling administrative tasks, customer accounts, billing, and documentation.",
+      "Resolving customer inquiries, coordinating with technical teams, and supporting web-based software maintenance during a 6-hour shift."
+    ],
+    technologies: ["Customer Accounts", "Billing", "Software Maintenance", "Documentation"]
   }
 ];
 

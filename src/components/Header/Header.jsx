@@ -2,26 +2,24 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 const navItems = [
   { name: 'About', href: '#about' },
   { name: 'Skills', href: '#skills' },
-  { name: 'Services', href: '#services' },
+  { name: 'Expertise', href: '#services' },
   { name: 'Portfolio', href: '#portfolio' },
   { name: 'Experience', href: '#experience' },
+  { name: 'Education', href: '#education' },
   { name: 'Contact', href: '#contact' },
 ];
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('about');
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
-
       const sections = navItems.map((item) => item.href.substring(1));
       const scrollPosition = window.scrollY + 250;
 
@@ -43,24 +41,24 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 w-full py-4 bg-[#08090b]/80 backdrop-blur-xl border-b border-white/10 mb-8 rounded-2xl">
-      <div className="px-6 flex items-center justify-between">
+    <header className="sticky top-0 z-40 w-full max-w-full py-3 sm:py-4 bg-[#08090b]/90 backdrop-blur-xl border-b border-white/10 mb-6 sm:mb-8 rounded-2xl box-border">
+      <div className="px-4 sm:px-6 flex items-center justify-between w-full max-w-full box-border">
         {/* Navigation Tabs */}
-        <nav className="hidden sm:flex items-center gap-1 bg-zinc-900/80 p-1.5 rounded-full border border-white/10">
+        <nav className="hidden md:flex items-center gap-1 bg-zinc-900/80 p-1.5 rounded-full border border-white/10">
           {navItems.map((item) => {
             const isActive = activeSection === item.href.substring(1);
             return (
               <a
                 key={item.name}
                 href={item.href}
-                className={`relative px-4 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 ${
+                className={`relative px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 ${
                   isActive ? 'text-[#08090b]' : 'text-[#8c9aa7] hover:text-white'
                 }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute inset-0 bg-[#b0e739] rounded-full shadow-[0_0_15px_rgba(176,231,57,0.4)]"
+                    className="absolute inset-0 bg-accent rounded-full shadow-[0_0_15px_var(--accent-glow)]"
                     transition={{ type: 'spring', duration: 0.4 }}
                   />
                 )}
@@ -71,14 +69,14 @@ export default function Header() {
         </nav>
 
         {/* Brand Tag for Mobile */}
-        <div className="sm:hidden font-bold text-white text-sm">
-          Saiful Kabir <span className="text-[#b0e739]">Chowdhury</span>
+        <div className="md:hidden font-bold text-white text-xs sm:text-sm">
+          Saiful Kabir <span className="text-accent">Chowdhury</span>
         </div>
 
         {/* CTA Button */}
         <a
           href="#contact"
-          className="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#b0e739] text-[#08090b] text-xs font-bold uppercase tracking-wider shadow-md hover:bg-[#a0d628] hover:scale-105 transition-all"
+          className="hidden md:flex items-center gap-1.5 px-4 py-2 rounded-full bg-accent text-[#08090b] text-xs font-bold uppercase tracking-wider shadow-md hover:scale-105 transition-all"
         >
           <span>Let&apos;s Talk</span>
           <ArrowUpRight className="w-3.5 h-3.5" />
@@ -87,7 +85,7 @@ export default function Header() {
         {/* Mobile Menu Trigger */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="sm:hidden p-2 rounded-xl bg-zinc-900 border border-white/10 text-[#8c9aa7] hover:text-white"
+          className="md:hidden p-2 rounded-xl bg-zinc-900 border border-white/10 text-[#8c9aa7] hover:text-white"
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -101,14 +99,14 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="sm:hidden bg-zinc-950 border-t border-white/10 mt-3 p-4 flex flex-col gap-3 rounded-b-xl"
+            className="md:hidden bg-zinc-950 border-t border-white/10 mt-3 p-4 flex flex-col gap-3 rounded-b-xl"
           >
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-semibold text-[#8c9aa7] hover:text-[#b0e739] py-1.5 flex items-center justify-between"
+                className="text-sm font-semibold text-[#8c9aa7] hover:text-accent py-1.5 flex items-center justify-between"
               >
                 <span>{item.name}</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-zinc-600" />

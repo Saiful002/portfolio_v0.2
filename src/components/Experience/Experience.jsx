@@ -6,21 +6,21 @@ import { experiencesData } from '@/data/portfolioData';
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative p-6 sm:p-10 rounded-3xl bg-[#12141a]/90 backdrop-blur-xl border border-white/10 shadow-2xl flex flex-col gap-8">
+    <section id="experience" className="relative p-5 sm:p-8 rounded-3xl bg-[#12141a]/90 backdrop-blur-xl border border-white/10 shadow-2xl flex flex-col gap-6 sm:gap-8 w-full max-w-full box-border">
       {/* Section Header */}
       <div className="flex flex-col gap-2">
-        <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#b0e739]">
+        <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-accent">
           <Sparkles className="w-4 h-4" />
           <span>Professional History</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Work <span className="text-[#b0e739]">Experience</span>
+        <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Work <span className="text-accent">Experience</span>
         </h2>
-        <div className="w-16 h-1 bg-[#b0e739] rounded-full mt-1" />
+        <div className="w-16 h-1 bg-accent rounded-full mt-1" />
       </div>
 
-      {/* Timeline List */}
-      <div className="relative pl-6 sm:pl-8 border-l border-zinc-800 space-y-8">
+      {/* Timeline Container */}
+      <div className="relative pl-7 sm:pl-9 border-l-2 border-zinc-800 space-y-6 sm:space-y-8">
         {experiencesData.map((exp, index) => (
           <motion.div
             key={exp.id}
@@ -28,31 +28,37 @@ export default function Experience() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="relative group"
+            className="relative group flex items-center"
           >
-            {/* Timeline Marker Dot */}
-            <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-5 h-5 rounded-full bg-[#12141a] border-2 border-[#b0e739] flex items-center justify-center group-hover:scale-125 transition-all">
-              <div className="w-2 h-2 rounded-full bg-[#b0e739]" />
+            {/* Horizontal Line Connecting Timeline to Card */}
+            <div className="absolute -left-[29px] sm:-left-[37px] top-1/2 -translate-y-1/2 w-7 sm:w-9 h-[2px] bg-[#b0e739]/30 group-hover:bg-accent transition-colors" />
+
+            {/* Vertically Centered Timeline Dot */}
+            <div className="absolute -left-[39px] sm:-left-[47px] top-1/2 -translate-y-1/2 w-4 sm:w-5 h-4 sm:h-5 rounded-full bg-[#12141a] border-2 border-accent flex items-center justify-center group-hover:scale-125 transition-transform z-10">
+              <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-accent" />
             </div>
 
             {/* Experience Card */}
-            <div className="p-6 rounded-2xl bg-zinc-900/80 border border-white/10 flex flex-col gap-3 hover:border-[#b0e739]/40 transition-all">
-              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/5 pb-3">
+            <div className="w-full p-5 sm:p-6 rounded-2xl bg-zinc-900/80 border border-white/10 flex flex-col gap-3 sm:gap-4 hover:border-accent transition-all">
+              {/* Header Row: All cards normalized to top-right date/location layout */}
+              <div className="flex flex-wrap items-start justify-between gap-3 border-b border-white/5 pb-3">
                 <div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-[#b0e739] transition-colors">
+                  <h3 className="text-base sm:text-xl font-bold text-white group-hover:text-accent transition-colors">
                     {exp.role}
                   </h3>
-                  <p className="text-xs font-semibold text-[#b0e739] flex items-center gap-1.5 mt-1">
+                  <p className="text-xs sm:text-sm font-semibold text-accent flex items-center gap-1.5 mt-1">
                     <Briefcase className="w-3.5 h-3.5" />
                     <span>{exp.company}</span>
                   </p>
                 </div>
-                <div className="flex flex-col sm:items-end text-[11px] text-[#8c9aa7] gap-1">
-                  <span className="flex items-center gap-1 font-mono font-semibold bg-zinc-950 px-2.5 py-0.5 rounded-full border border-white/10 text-white">
-                    <Calendar className="w-3 h-3 text-[#b0e739]" />
+
+                {/* Uniform Top-Right Date & Location Badge for ALL Cards */}
+                <div className="flex flex-col sm:items-end text-[11px] text-[#8c9aa7] gap-1 shrink-0">
+                  <span className="flex items-center gap-1.5 font-mono font-semibold bg-zinc-950 px-2.5 py-1 rounded-full border border-white/10 text-white">
+                    <Calendar className="w-3 h-3 text-accent" />
                     {exp.period}
                   </span>
-                  <span className="flex items-center gap-1">
+                  <span className="flex items-center gap-1 text-[#8c9aa7]">
                     <MapPin className="w-3 h-3 text-zinc-500" />
                     {exp.location}
                   </span>
@@ -63,18 +69,18 @@ export default function Experience() {
               <ul className="space-y-2 pt-1">
                 {exp.description.map((point, pIdx) => (
                   <li key={pIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#8c9aa7] leading-relaxed font-normal">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#b0e739] mt-1 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-accent mt-0.5 shrink-0" />
                     <span>{point}</span>
                   </li>
                 ))}
               </ul>
 
-              {/* Tech Tags */}
-              <div className="flex flex-wrap items-center gap-1.5 pt-2">
+              {/* Tech Badges */}
+              <div className="flex flex-wrap items-center gap-1.5 pt-1">
                 {exp.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="px-2.5 py-0.5 rounded-full bg-zinc-950 text-[10px] font-mono text-zinc-400 border border-white/5"
+                    className="px-2.5 py-0.5 rounded-full bg-zinc-950 text-[10px] font-mono text-zinc-300 border border-white/5"
                   >
                     {tech}
                   </span>

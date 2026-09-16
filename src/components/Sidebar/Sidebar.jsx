@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Download, Mail, Sparkles, MapPin, CheckCircle2 } from 'lucide-react';
+import { Download, Mail, MapPin } from 'lucide-react';
 import Image from 'next/image';
 import { personalDetails, socialLinks } from '@/data/portfolioData';
 import { GithubIcon, LinkedinIcon, FacebookIcon, InstagramIcon } from '../SocialIcons/SocialIcons';
@@ -25,45 +25,45 @@ export default function Sidebar() {
   }, []);
 
   return (
-    <aside className="w-full lg:sticky lg:top-8 h-fit z-30">
-      <div className="relative rounded-3xl p-6 sm:p-8 bg-[#12141a]/90 backdrop-blur-xl border border-white/10 shadow-2xl flex flex-col items-center text-center gap-6 overflow-hidden group hover:border-[#b0e739]/40 transition-all duration-500">
+    <aside className="w-full">
+      <div className="relative w-full rounded-3xl p-5 sm:p-7 bg-[#12141a]/95 backdrop-blur-xl border border-white/10 shadow-2xl flex flex-col items-center text-center gap-5 group hover:border-[#b0e739]/40 transition-all duration-500">
         
         {/* Subtle Ambient Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-48 bg-[#b0e739]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-44 h-44 rounded-full blur-3xl pointer-events-none" style={{ backgroundColor: 'var(--accent-neon)', opacity: 0.12 }} />
 
         {/* Profile Avatar Frame */}
-        <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full p-1 bg-gradient-to-tr from-[#b0e739] via-emerald-400 to-cyan-400 shadow-lg shadow-[#b0e739]/20">
+        <div className="relative w-36 h-36 sm:w-40 sm:h-40 rounded-full p-1 shadow-lg shadow-[#b0e739]/20" style={{ background: 'linear-gradient(135deg, var(--accent-neon) 0%, #10b981 100%)' }}>
           <div className="relative w-full h-full rounded-full overflow-hidden bg-zinc-900">
             <Image
               src="/images/profile.jpg"
               alt={personalDetails.name}
               fill
+              sizes="(max-width: 768px) 160px, 160px"
               priority
               className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
             />
           </div>
-          {/* Online Indicator */}
           <span className="absolute bottom-2 right-2 flex h-4 w-4">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#b0e739] opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-4 w-4 bg-[#b0e739] border-2 border-[#12141a]"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-4 w-4 bg-accent border-2 border-[#12141a]"></span>
           </span>
         </div>
 
         {/* Name & Animated Title */}
-        <div className="flex flex-col gap-2 items-center">
+        <div className="flex flex-col gap-1.5 items-center w-full">
           <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-            Hi, I&apos;m <span className="text-[#b0e739]">{personalDetails.name.split(' ')[0]}</span>
+            Hi, I&apos;m <span className="text-accent">{personalDetails.name.split(' ')[0]}</span>
           </h1>
 
-          <div className="h-8 flex items-center justify-center gap-1.5 text-base sm:text-lg font-bold text-[#8c9aa7]">
+          <div className="h-7 flex items-center justify-center gap-1.5 text-sm sm:text-base font-bold text-[#8c9aa7]">
             <span className="text-white">A</span>
             <motion.span
               key={roleIndex}
-              initial={{ opacity: 0, y: 8 }}
+              initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
+              exit={{ opacity: 0, y: -6 }}
               transition={{ duration: 0.35 }}
-              className="text-[#b0e739]"
+              className="text-accent"
             >
               {personalDetails.roles[roleIndex]}
             </motion.span>
@@ -71,13 +71,13 @@ export default function Sidebar() {
         </div>
 
         {/* Short Bio Summary */}
-        <p className="text-[#8c9aa7] text-xs sm:text-sm leading-relaxed max-w-xs font-normal">
+        <p className="text-[#8c9aa7] text-xs sm:text-sm leading-relaxed font-normal px-2">
           {personalDetails.bio}
         </p>
 
         {/* Location & Status Badge */}
-        <div className="flex flex-wrap items-center justify-center gap-2 text-xs font-mono text-[#8c9aa7] py-1 border-y border-white/5 w-full">
-          <span className="flex items-center gap-1 text-[#b0e739]">
+        <div className="flex flex-wrap items-center justify-center gap-2 text-xs font-mono text-[#8c9aa7] py-2 border-y border-white/5 w-full">
+          <span className="flex items-center gap-1 text-accent">
             <MapPin className="w-3.5 h-3.5" />
             {personalDetails.location}
           </span>
@@ -86,11 +86,11 @@ export default function Sidebar() {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center gap-3 w-full pt-1">
+        <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full pt-1">
           <a
             href={personalDetails.resumeUrl}
             download
-            className="w-full py-3.5 px-5 rounded-2xl bg-[#b0e739] text-[#08090b] font-bold text-xs uppercase tracking-wider shadow-lg shadow-[#b0e739]/25 hover:bg-[#a0d628] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2"
+            className="w-full py-3 px-4 rounded-2xl bg-accent text-[#08090b] font-bold text-xs uppercase tracking-wider shadow-lg hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2"
           >
             <Download className="w-4 h-4" />
             <span>Download My CV</span>
@@ -98,15 +98,15 @@ export default function Sidebar() {
 
           <a
             href="#contact"
-            className="w-full py-3.5 px-5 rounded-2xl bg-zinc-900 border border-white/10 text-white font-bold text-xs uppercase tracking-wider hover:border-[#b0e739]/50 hover:bg-zinc-800 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2"
+            className="w-full py-3 px-4 rounded-2xl bg-zinc-900 border border-white/10 text-white font-bold text-xs uppercase tracking-wider hover:border-accent hover:bg-zinc-800 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2"
           >
-            <Mail className="w-4 h-4 text-[#b0e739]" />
+            <Mail className="w-4 h-4 text-accent" />
             <span>Hire Me</span>
           </a>
         </div>
 
         {/* Social Links Bar */}
-        <div className="flex items-center justify-center gap-3 pt-2">
+        <div className="flex items-center justify-center gap-2.5 pt-1">
           {socialLinks.map((social) => {
             const IconComponent = socialIconMap[social.iconName] || GithubIcon;
             return (
@@ -115,7 +115,7 @@ export default function Sidebar() {
                 href={social.url}
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-xl bg-zinc-900/90 border border-white/10 text-[#8c9aa7] hover:text-[#b0e739] hover:border-[#b0e739]/40 hover:bg-[#b0e739]/10 transition-all flex items-center justify-center"
+                className="w-9 h-9 rounded-xl bg-zinc-900/90 border border-white/10 text-[#8c9aa7] hover:text-accent hover:border-accent hover:bg-[#b0e739]/10 transition-all flex items-center justify-center"
                 aria-label={social.name}
               >
                 <IconComponent className="w-4 h-4" />
