@@ -1,0 +1,75 @@
+https://mui.com/production-error/?code=
+---
+Minified React error #
+---
+httpEquiv
+---
+http-equiv
+---
+Objects are not valid as a React child (found: 
+---
+React.Children.only expected to receive a single React element child.
+---
+React.cloneElement(...): The argument must be a React element, but you passed 
+---
+act(...) is not supported in production builds of React.
+---
+MuiAppBar
+---
+--AppBar-background
+---
+--AppBar-color
+---
+var(--AppBar-background)
+---
+var(--AppBar-color)
+---
+Skills
+---
+Projects
+---
+#projects
+---
+framerAppearId
+---
+If `dragConstraints` is set as a React ref, that ref must be passed to another component's `ref` prop.
+---
+projectionFrame
+---
+projectionUpdate
+---
+https://www.facebook.com/caudhuri.saheba.255136/
+---
+https://github.com/Saiful002
+---
+https://www.linkedin.com/in/saiful-kabir-chowdhury-a58a57353/
+---
+https://www.instagram.com/_saiful_kabir/
+---
+Saiful Kabir Chowdhury
+---
+Developer
+---
+ Saiful Kabir Chowdhury
+---
+/cv/Saiful_Resume.pdf
+---
+Saiful_Resume.pdf
+---
+Detailed Skills
+---
+https://github.com/Saiful002/GUB_IDPC_2025
+---
+https://gub-idpc-2025.vercel.app/
+---
+https://github.com/Saiful002/PortFolio
+---
+https://github.com/Saiful002/Round-Trip
+---
+projects
+---
+https://github.com/Saiful002?tab=repositories
+---
+http://localhost:5000/send-mail
+---
+ Direct mail: csaifulkabir@gmail.com

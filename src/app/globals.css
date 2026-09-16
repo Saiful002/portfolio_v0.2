@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #08090b;
+    --bg-card: #12141a;
+    --accent-neon: #b0e739;
+    --text-slate: #8c9aa7;
+    --text-white: #ffffff;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    background-color: #08090b;
+    color: #ffffff;
+    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: #08090b;
+    background-image: 
+      radial-gradient(circle at 15% 15%, rgba(176, 231, 57, 0.05) 0%, transparent 45%),
+      radial-gradient(circle at 85% 85%, rgba(176, 231, 57, 0.03) 0%, transparent 45%),
+      radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 28px 28px;
+    color: #ffffff;
+    overflow-x: hidden;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #08090b;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #222630;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b0e739;
+  }
+}
+
+/* Glassmorphism & Neon Cards */
+.glass-panel-neon {
+  background: rgba(18, 20, 26, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(176, 231, 57, 0.15);
+}
+
+.glass-card-neon {
+  background: rgba(18, 20, 26, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-neon:hover {
+  background: rgba(24, 28, 36, 0.9);
+  border-color: rgba(176, 231, 57, 0.4);
+  box-shadow: 0 10px 35px -10px rgba(176, 231, 57, 0.18);
+  transform: translateY(-3px);
+}
+
+/* Neon Text & Background Helpers */
+.text-neon {
+  color: #b0e739;
+}
+
+.bg-neon {
+  background-color: #b0e739;
+}
+
+.border-neon {
+  border-color: #b0e739;
+}
+
+.text-slate-muted {
+  color: #8c9aa7;
+}
+
+.glow-neon-box {
+  box-shadow: 0 0 30px -5px rgba(176, 231, 57, 0.3);
+}
+
+/* Infinite Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Ultra Smooth Custom Cursor */
+@media (min-width: 1024px) {
+  .custom-cursor-active, 
+  .custom-cursor-active button, 
+  .custom-cursor-active a {
+    cursor: none !important;
+  }
+}
