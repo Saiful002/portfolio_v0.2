@@ -11,7 +11,7 @@ export const personalDetails = {
   longAbout: "Hello there! I'm Saiful Kabir Chowdhury, a dedicated Full Stack Web Developer and CSE Student. I specialize in building end-to-end web applications, custom Shopify themes, and bespoke WordPress solutions. My focus is on creating exceptional user experiences powered by clean code, intuitive UI/UX design, and dynamic animations. Whether crafting custom React/Next.js platforms or building high-converting Shopify storefronts, I turn complex ideas into digital reality.",
   email: "csaifulkabir@gmail.com",
   location: "Dhaka, Bangladesh",
-  resumeUrl: "/cv/Saiful_Resume.pdf",
+  resumeUrl: "/cv/Resume.pdf",
 };
 
 export const statItems = [

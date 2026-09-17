@@ -1,8 +1,18 @@
 'use client';
 
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
+
+if (typeof window !== 'undefined') {
+  const origWarn = console.warn;
+  console.warn = (...args) => {
+    if (args[0] && typeof args[0] === 'string' && args[0].includes('THREE.Clock')) {
+      return;
+    }
+    origWarn(...args);
+  };
+}
 
 function NeonParticleGrid() {
   const ref = useRef(null);

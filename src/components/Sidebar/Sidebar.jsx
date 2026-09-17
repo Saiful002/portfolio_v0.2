@@ -115,7 +115,9 @@ export default function Sidebar() {
         <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full pt-1">
           <a
             href={personalDetails.resumeUrl}
-            download
+            download="Saiful_Kabir_Chowdhury_Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
             className="w-full py-3 px-4 rounded-2xl bg-zinc-900 border border-white/10 text-white font-bold text-xs uppercase tracking-wider hover:border-accent hover:bg-zinc-800 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2"
           >
             <Download className="w-4 h-4 text-accent shrink-0" />
