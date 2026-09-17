@@ -16,6 +16,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
+  metadataBase: new URL('https://port-folio-five-cyan.vercel.app'),
   title: 'Saiful Kabir Chowdhury | Full Stack & Shopify Developer',
   description:
     'Professional portfolio website showcasing full-stack development, Shopify, WordPress, and modern web solutions.',

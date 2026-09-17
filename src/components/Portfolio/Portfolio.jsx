@@ -20,12 +20,11 @@ export default function Portfolio() {
     <section id="portfolio" className="relative p-5 sm:p-8 rounded-3xl bg-[#12141a]/90 backdrop-blur-xl border border-white/10 shadow-2xl flex flex-col gap-6 sm:gap-8 w-full max-w-full box-border">
       {/* Section Header */}
       <div className="flex flex-col gap-2">
-        <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-accent">
-          <Sparkles className="w-4 h-4" />
-          <span>Case Studies & Work</span>
+        <div className="text-xs font-mono uppercase tracking-widest text-accent font-semibold">
+          Case Studies & Work
         </div>
         <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Featured <span className="text-accent">Projects</span>
+          Featured <span className="text-gradient-silver">Projects</span>
         </h2>
         <div className="w-16 h-1 bg-accent rounded-full mt-1" />
       </div>
@@ -38,7 +37,7 @@ export default function Portfolio() {
             onClick={() => setSelectedCategory(cat)}
             className={`px-3.5 py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
               selectedCategory === cat
-                ? 'bg-accent text-[#08090b] shadow-lg font-bold scale-105'
+                ? 'bg-zinc-800 text-white border border-accent/60 font-bold shadow-md scale-105'
                 : 'bg-zinc-900 border border-white/10 text-[#8c9aa7] hover:text-white'
             }`}
           >
@@ -56,9 +55,10 @@ export default function Portfolio() {
               key={project.id}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
+              whileHover={{ y: -8, scale: 1.015 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.4 }}
-              className="group relative rounded-2xl p-4 bg-zinc-900/80 border border-white/10 flex flex-col justify-between hover:border-accent transition-all duration-300 overflow-hidden"
+              className="group relative rounded-2xl p-4 card-hover-effect flex flex-col justify-between overflow-hidden cursor-pointer"
             >
               {/* Media Preview with sizes prop */}
               <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden bg-zinc-950 mb-3.5">

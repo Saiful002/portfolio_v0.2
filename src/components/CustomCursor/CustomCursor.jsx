@@ -62,15 +62,15 @@ export default function CustomCursor() {
       <div
         ref={ringRef}
         className={`fixed top-0 left-0 rounded-full border pointer-events-none transition-all duration-75 ease-out ${
-          isHovered ? 'w-10 h-10 bg-[#b0e739]/15 border-accent' : 'w-6 h-6 bg-transparent border-accent opacity-70'
+          isHovered ? 'w-10 h-10 border-accent' : 'w-6 h-6 bg-transparent border-accent opacity-75'
         }`}
-        style={{ willChange: 'transform', borderColor: 'var(--accent-neon)' }}
+        style={{ willChange: 'transform', borderColor: 'var(--accent-neon)', backgroundColor: isHovered ? 'var(--accent-glow)' : 'transparent' }}
       />
       {/* Inner Dot using CSS variable */}
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none bg-accent glow-accent"
-        style={{ willChange: 'transform' }}
+        className="fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none glow-accent"
+        style={{ willChange: 'transform', backgroundColor: 'var(--accent-neon)' }}
       />
     </div>
   );

@@ -25,17 +25,17 @@ export default function Sidebar() {
   }, []);
 
   return (
-    <aside className="w-full">
-      <div className="relative w-full rounded-3xl p-5 sm:p-7 bg-[#12141a]/95 backdrop-blur-xl border border-white/10 shadow-2xl flex flex-col items-center text-center gap-5 group hover:border-[#b0e739]/40 transition-all duration-500">
-        
+    <aside className="w-full box-border">
+      <div className="relative w-full rounded-3xl p-5 sm:p-7 bg-[#12141a]/95 backdrop-blur-xl border border-white/10 shadow-2xl flex flex-col items-center text-center gap-5 group hover:border-accent/40 transition-all duration-500 overflow-hidden box-border">
+
         {/* Subtle Ambient Glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-44 h-44 rounded-full blur-3xl pointer-events-none" style={{ backgroundColor: 'var(--accent-neon)', opacity: 0.12 }} />
 
         {/* Profile Avatar Frame */}
-        <div className="relative w-36 h-36 sm:w-40 sm:h-40 rounded-full p-1 shadow-lg shadow-[#b0e739]/20" style={{ background: 'linear-gradient(135deg, var(--accent-neon) 0%, #10b981 100%)' }}>
+        <div className="relative w-36 h-36 sm:w-40 sm:h-40 rounded-full p-1 shadow-lg shadow-accent/20" style={{ background: 'linear-gradient(135deg, var(--accent-neon) 0%, #10b981 100%)' }}>
           <div className="relative w-full h-full rounded-full overflow-hidden bg-zinc-900">
             <Image
-              src="/images/profile.jpg"
+              src="/images/dp.jpg"
               alt={personalDetails.name}
               fill
               sizes="(max-width: 768px) 160px, 160px"
@@ -52,7 +52,7 @@ export default function Sidebar() {
         {/* Name & Animated Title */}
         <div className="flex flex-col gap-1.5 items-center w-full">
           <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-            Hi, I&apos;m <span className="text-accent">{personalDetails.name.split(' ')[0]}</span>
+            Hi, I&apos;m <span className="text-gradient-silver">{personalDetails.name.split(' ')[0]}</span>
           </h1>
 
           <div className="h-7 flex items-center justify-center gap-1.5 text-sm sm:text-base font-bold text-[#8c9aa7]">
@@ -77,8 +77,8 @@ export default function Sidebar() {
 
         {/* Location & Status Badge */}
         <div className="flex flex-wrap items-center justify-center gap-2 text-xs font-mono text-[#8c9aa7] py-2 border-y border-white/5 w-full">
-          <span className="flex items-center gap-1 text-accent">
-            <MapPin className="w-3.5 h-3.5" />
+          <span className="flex items-center gap-1 text-[#8c9aa7]">
+            <MapPin className="w-3.5 h-3.5 text-accent" />
             {personalDetails.location}
           </span>
           <span>•</span>
@@ -90,9 +90,9 @@ export default function Sidebar() {
           <a
             href={personalDetails.resumeUrl}
             download
-            className="w-full py-3 px-4 rounded-2xl bg-accent text-[#08090b] font-bold text-xs uppercase tracking-wider shadow-lg hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2"
+            className="w-full py-3 px-4 rounded-2xl bg-zinc-900 border border-white/10 text-white font-bold text-xs uppercase tracking-wider hover:border-accent hover:bg-zinc-800 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2"
           >
-            <Download className="w-4 h-4" />
+            <Download className="w-4 h-4 text-accent shrink-0" />
             <span>Download My CV</span>
           </a>
 
@@ -100,7 +100,7 @@ export default function Sidebar() {
             href="#contact"
             className="w-full py-3 px-4 rounded-2xl bg-zinc-900 border border-white/10 text-white font-bold text-xs uppercase tracking-wider hover:border-accent hover:bg-zinc-800 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2"
           >
-            <Mail className="w-4 h-4 text-accent" />
+            <Mail className="w-4 h-4 text-accent shrink-0" />
             <span>Hire Me</span>
           </a>
         </div>
@@ -115,7 +115,7 @@ export default function Sidebar() {
                 href={social.url}
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-xl bg-zinc-900/90 border border-white/10 text-[#8c9aa7] hover:text-accent hover:border-accent hover:bg-[#b0e739]/10 transition-all flex items-center justify-center"
+                className="w-9 h-9 rounded-xl bg-zinc-900/90 border border-white/10 text-[#8c9aa7] hover:text-accent hover:border-accent hover:bg-accent/10 transition-all flex items-center justify-center"
                 aria-label={social.name}
               >
                 <IconComponent className="w-4 h-4" />

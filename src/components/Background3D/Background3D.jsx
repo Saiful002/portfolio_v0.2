@@ -30,7 +30,7 @@ function NeonParticleGrid() {
       <Points ref={ref} positions={positions} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color="#b0e739"
+          color="#BEF264"
           size={0.03}
           sizeAttenuation={true}
           depthWrite={false}
@@ -46,7 +46,7 @@ export default function Background3D() {
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-50">
       <Canvas camera={{ position: [0, 0, 5], fov: 60 }} gl={{ alpha: true, antialias: true }}>
         <ambientLight intensity={0.4} />
-        <pointLight position={[10, 10, 5]} intensity={0.8} color="#b0e739" />
+        <pointLight position={[10, 10, 5]} intensity={0.8} color="#BEF264" />
         <NeonParticleGrid />
       </Canvas>
     </div>

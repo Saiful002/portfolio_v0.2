@@ -17,15 +17,23 @@ export default function Home() {
       <Background3D />
       <ScrollProgressButton />
       <div className="relative z-10 max-w-[1400px] mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-12">
+        {/* Mobile Top Header (only on mobile devices) */}
+        <div className="block lg:hidden mb-4">
+          <Header />
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
-          {/* Left Column: STICKY POSITIONING */}
+          {/* Left Column: STICKY POSITIONING ON DESKTOP */}
           <div className="lg:col-span-4 lg:sticky lg:top-8 self-start z-30">
             <Sidebar />
           </div>
 
           {/* Right Column: SCROLLABLE SECTIONS */}
           <div className="lg:col-span-8 flex flex-col gap-8 sm:gap-10">
-            <Header />
+            {/* Desktop Header */}
+            <div className="hidden lg:block">
+              <Header />
+            </div>
             <About />
             <Skills />
             <Services />

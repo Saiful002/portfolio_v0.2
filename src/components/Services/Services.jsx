@@ -14,12 +14,11 @@ export default function Services() {
     <section id="services" className="relative p-5 sm:p-8 rounded-3xl bg-[#12141a]/90 backdrop-blur-xl border border-white/10 shadow-2xl flex flex-col gap-6 sm:gap-8 w-full max-w-full box-border">
       {/* Section Header */}
       <div className="flex flex-col gap-2">
-        <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-accent">
-          <Sparkles className="w-4 h-4" />
-          <span>Core Specializations</span>
+        <div className="text-xs font-mono uppercase tracking-widest text-accent font-semibold">
+          Core Specializations
         </div>
         <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-          My <span className="text-accent">Expertise</span>
+          My <span className="text-gradient-silver">Expertise</span>
         </h2>
         <div className="w-16 h-1 bg-accent rounded-full mt-1" />
       </div>
@@ -33,17 +32,18 @@ export default function Services() {
               key={service.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -8, scale: 1.015 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative group rounded-2xl p-5 sm:p-6 bg-zinc-900/80 border border-white/10 flex flex-col justify-between hover:border-accent transition-all duration-300"
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="relative group rounded-2xl p-5 sm:p-6 card-hover-effect flex flex-col justify-between cursor-pointer"
             >
               <span className="absolute top-5 right-5 px-2.5 py-0.5 rounded-full bg-accent text-[#08090b] text-[10px] font-extrabold uppercase tracking-wider shadow-sm">
                 Primary Specialty
               </span>
 
               <div>
-                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-zinc-950 border border-white/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-[#08090b] transition-all duration-300 mb-4 shadow-inner">
-                  <IconComponent className="w-5 h-5 sm:w-6 sm:h-6" />
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-zinc-950 border border-white/10 group-hover:border-accent flex items-center justify-center text-accent transition-all duration-300 mb-4 shadow-inner">
+                  <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-accent shrink-0" />
                 </div>
 
                 <h3 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">

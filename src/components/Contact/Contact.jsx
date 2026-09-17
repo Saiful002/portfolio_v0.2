@@ -37,12 +37,11 @@ export default function Contact() {
     <section id="contact" className="relative p-5 sm:p-8 rounded-3xl bg-[#12141a]/90 backdrop-blur-xl border border-white/10 shadow-2xl flex flex-col gap-6 sm:gap-8 w-full max-w-full box-border">
       {/* Section Header */}
       <div className="flex flex-col gap-2">
-        <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-accent">
-          <Sparkles className="w-4 h-4" />
-          <span>Get In Touch</span>
+        <div className="text-xs font-mono uppercase tracking-widest text-accent font-semibold">
+          Get In Touch
         </div>
         <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Contact <span className="text-accent">Me</span>
+          Contact <span className="text-gradient-silver">Me</span>
         </h2>
         <div className="w-16 h-1 bg-accent rounded-full mt-1" />
       </div>
@@ -50,7 +49,7 @@ export default function Contact() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
         {/* Info Column */}
         <div className="md:col-span-5 flex flex-col gap-4">
-          <div className="p-4 sm:p-5 rounded-2xl bg-zinc-900/80 border border-white/10 flex flex-col gap-3">
+          <div className="p-4 sm:p-5 rounded-2xl card-hover-effect flex flex-col gap-3">
             <div className="w-10 h-10 rounded-xl bg-zinc-950 border border-white/10 flex items-center justify-center text-accent">
               <Mail className="w-5 h-5" />
             </div>
@@ -76,7 +75,7 @@ export default function Contact() {
             </button>
           </div>
 
-          <div className="p-4 sm:p-5 rounded-2xl bg-zinc-900/80 border border-white/10 flex items-center gap-3">
+          <div className="p-4 sm:p-5 rounded-2xl card-hover-effect flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-zinc-950 border border-white/10 flex items-center justify-center text-accent shrink-0">
               <MapPin className="w-5 h-5" />
             </div>
@@ -88,7 +87,7 @@ export default function Contact() {
         </div>
 
         {/* Form Column */}
-        <div className="md:col-span-7 p-5 sm:p-6 rounded-2xl bg-zinc-900/80 border border-white/10">
+        <div className="md:col-span-7 p-5 sm:p-6 rounded-2xl card-hover-effect">
           <h3 className="text-base sm:text-lg font-bold text-white mb-4">Send a Message</h3>
 
           {formSubmitted ? (
@@ -97,7 +96,7 @@ export default function Contact() {
               animate={{ opacity: 1, scale: 1 }}
               className="py-8 flex flex-col items-center text-center gap-3"
             >
-              <div className="w-12 h-12 rounded-full bg-[#b0e739]/20 border border-accent flex items-center justify-center text-accent">
+              <div className="w-12 h-12 rounded-full bg-accent/20 border border-accent flex items-center justify-center text-accent">
                 <CheckCircle2 className="w-6 h-6" />
               </div>
               <h4 className="text-lg font-bold text-white">Thank You!</h4>

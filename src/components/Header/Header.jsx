@@ -70,16 +70,16 @@ export default function Header() {
 
         {/* Brand Tag for Mobile */}
         <div className="md:hidden font-bold text-white text-xs sm:text-sm">
-          Saiful Kabir <span className="text-accent">Chowdhury</span>
+          Saiful Kabir <span className="text-gradient-silver">Chowdhury</span>
         </div>
 
         {/* CTA Button */}
         <a
           href="#contact"
-          className="hidden md:flex items-center gap-1.5 px-4 py-2 rounded-full bg-accent text-[#08090b] text-xs font-bold uppercase tracking-wider shadow-md hover:scale-105 transition-all"
+          className="hidden md:flex items-center gap-1.5 px-4 py-2 rounded-full bg-zinc-900 border border-white/10 text-white text-xs font-bold uppercase tracking-wider hover:border-accent hover:bg-zinc-800 transition-all"
         >
           <span>Let&apos;s Talk</span>
-          <ArrowUpRight className="w-3.5 h-3.5" />
+          <ArrowUpRight className="w-3.5 h-3.5 text-accent shrink-0" />
         </a>
 
         {/* Mobile Menu Trigger */}

@@ -45,12 +45,11 @@ export default function Skills() {
     <section id="skills" className="relative p-5 sm:p-8 rounded-3xl bg-[#12141a]/90 backdrop-blur-xl border border-white/10 shadow-2xl flex flex-col gap-6 sm:gap-8 w-full max-w-full box-border overflow-hidden">
       {/* Section Header */}
       <div className="flex flex-col gap-2">
-        <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-accent">
-          <Sparkles className="w-4 h-4" />
-          <span>Technical Expertise</span>
+        <div className="text-xs font-mono uppercase tracking-widest text-accent font-semibold">
+          Technical Expertise
         </div>
         <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-          About <span className="text-accent">My Skill</span>
+          About <span className="text-gradient-silver">My Skill</span>
         </h2>
         <div className="w-16 h-1 bg-accent rounded-full mt-1" />
       </div>
@@ -63,7 +62,7 @@ export default function Skills() {
             onClick={() => setActiveTab(idx)}
             className={`px-3.5 py-2 rounded-xl text-[11px] sm:text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
               activeTab === idx
-                ? 'bg-accent text-[#08090b] shadow-lg font-bold scale-105'
+                ? 'bg-zinc-800 text-white border border-accent/60 font-bold shadow-md scale-105'
                 : 'bg-zinc-900 border border-white/10 text-[#8c9aa7] hover:text-white'
             }`}
           >
@@ -83,13 +82,13 @@ export default function Skills() {
         {skillCategories[activeTab].skills.map((skill, sIdx) => (
           <div
             key={skill.name}
-            className="p-3.5 rounded-2xl bg-zinc-900/90 border border-white/10 flex flex-col gap-2 group hover:border-accent transition-all"
+            className="p-3.5 rounded-2xl card-hover-effect flex flex-col gap-2 group cursor-pointer"
           >
             <div className="flex items-center justify-between">
               <span className="font-bold text-xs sm:text-sm text-white group-hover:text-accent transition-colors">
                 {skill.name}
               </span>
-              <span className="text-[10px] sm:text-[11px] font-mono font-semibold text-accent bg-[#b0e739]/10 px-2 py-0.5 rounded-full border border-accent">
+              <span className="text-[10px] sm:text-[11px] font-mono font-semibold text-accent bg-accent/10 px-2 py-0.5 rounded-full border border-accent">
                 {skill.level}%
               </span>
             </div>
