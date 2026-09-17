@@ -41,17 +41,17 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 w-full max-w-full py-3 sm:py-4 bg-[#08090b]/90 backdrop-blur-xl border-b border-white/10 mb-6 sm:mb-8 rounded-2xl box-border">
-      <div className="px-4 sm:px-6 flex items-center justify-between w-full max-w-full box-border">
+    <header className="sticky top-0 z-40 w-full max-w-full py-2.5 sm:py-4 bg-[#08090b]/90 backdrop-blur-xl border-b border-white/10 mb-6 sm:mb-8 rounded-2xl box-border">
+      <div className="px-3 sm:px-6 flex items-center justify-between w-full max-w-full box-border gap-2 overflow-hidden">
         {/* Navigation Tabs */}
-        <nav className="hidden md:flex items-center gap-1 bg-zinc-900/80 p-1.5 rounded-full border border-white/10">
+        <nav className="hidden md:flex items-center gap-0.5 lg:gap-1 bg-zinc-900/80 p-1 lg:p-1.5 rounded-full border border-white/10 overflow-x-auto scrollbar-none max-w-full shrink">
           {navItems.map((item) => {
             const isActive = activeSection === item.href.substring(1);
             return (
               <a
                 key={item.name}
                 href={item.href}
-                className={`relative px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 ${
+                className={`relative px-2.5 lg:px-3.5 py-1 lg:py-1.5 text-[11px] lg:text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 shrink-0 ${
                   isActive ? 'text-[#08090b]' : 'text-[#8c9aa7] hover:text-white'
                 }`}
               >
@@ -69,14 +69,14 @@ export default function Header() {
         </nav>
 
         {/* Brand Tag for Mobile */}
-        <div className="md:hidden font-bold text-white text-xs sm:text-sm">
+        <div className="md:hidden font-bold text-white text-xs sm:text-sm truncate">
           Saiful Kabir <span className="text-gradient-silver">Chowdhury</span>
         </div>
 
         {/* CTA Button */}
         <a
           href="#contact"
-          className="hidden md:flex items-center gap-1.5 px-4 py-2 rounded-full bg-zinc-900 border border-white/10 text-white text-xs font-bold uppercase tracking-wider hover:border-accent hover:bg-zinc-800 transition-all"
+          className="hidden md:flex items-center gap-1.5 px-3 lg:px-4 py-1.5 lg:py-2 rounded-full bg-zinc-900 border border-white/10 text-white text-[11px] lg:text-xs font-bold uppercase tracking-wider hover:border-accent hover:bg-zinc-800 transition-all shrink-0"
         >
           <span>Let&apos;s Talk</span>
           <ArrowUpRight className="w-3.5 h-3.5 text-accent shrink-0" />

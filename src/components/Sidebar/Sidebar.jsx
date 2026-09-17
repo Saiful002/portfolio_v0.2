@@ -31,19 +31,45 @@ export default function Sidebar() {
         {/* Subtle Ambient Glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-44 h-44 rounded-full blur-3xl pointer-events-none" style={{ backgroundColor: 'var(--accent-neon)', opacity: 0.12 }} />
 
-        {/* Profile Avatar Frame */}
-        <div className="relative w-36 h-36 sm:w-40 sm:h-40 rounded-full p-1 shadow-lg shadow-accent/20" style={{ background: 'linear-gradient(135deg, var(--accent-neon) 0%, #10b981 100%)' }}>
-          <div className="relative w-full h-full rounded-full overflow-hidden bg-zinc-900">
+        {/* Profile Avatar Frame with Single Loop Circle Animation on Card Hover */}
+        <div className="relative w-36 h-36 sm:w-40 sm:h-40 rounded-full p-1 shadow-lg shadow-accent/20 flex items-center justify-center">
+          {/* Base Static Border Ring */}
+          <div className="absolute inset-0 rounded-full p-[2px]" style={{ background: 'linear-gradient(135deg, var(--accent-neon) 0%, #7a9bb9 100%)' }} />
+
+          {/* Avatar Image (Sharp, Pristine Circular Clip) */}
+          <div className="relative w-full h-full rounded-full overflow-hidden bg-zinc-900 z-10">
             <Image
               src="/images/dp.jpg"
               alt={personalDetails.name}
               fill
               sizes="(max-width: 768px) 160px, 160px"
               priority
-              className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              className="object-cover object-center"
             />
           </div>
-          <span className="absolute bottom-2 right-2 flex h-4 w-4">
+
+          {/* SVG Single Loop Animated Circle Border on Card Hover (Positioned on top of border ring) */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none -rotate-90 z-20 overflow-visible rounded-full" viewBox="0 0 100 100">
+            <defs>
+              <linearGradient id="avatarCircleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="var(--accent-neon)" />
+                <stop offset="50%" stopColor="#ffffff" stopOpacity="0.9" />
+                <stop offset="100%" stopColor="var(--accent-neon)" />
+              </linearGradient>
+            </defs>
+            <circle
+              cx="50"
+              cy="50"
+              r="48.5"
+              fill="none"
+              stroke="url(#avatarCircleGradient)"
+              strokeWidth="3.5"
+              strokeLinecap="round"
+              className="avatar-border-sweep"
+            />
+          </svg>
+
+          <span className="absolute bottom-1.5 right-1.5 flex h-4 w-4 z-30">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
             <span className="relative inline-flex rounded-full h-4 w-4 bg-accent border-2 border-[#12141a]"></span>
           </span>

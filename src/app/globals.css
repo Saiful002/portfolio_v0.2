@@ -131,6 +131,27 @@ svg.text-accent {
   color: var(--text-slate);
 }
 
+/* Single Loop Avatar Circle Sweep Animation on Card Hover with Clean Neon Glow */
+.avatar-border-sweep {
+  stroke-dasharray: 304.73;
+  stroke-dashoffset: 304.73;
+  filter: drop-shadow(0 0 5px var(--accent-neon));
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.group:hover .avatar-border-sweep {
+  animation: singleCircleSweep 0.9s cubic-bezier(0.4, 0, 0.2, 1) 1 forwards;
+}
+
+@keyframes singleCircleSweep {
+  0% {
+    stroke-dashoffset: 304.73;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
 /* Infinite Marquee Animation */
 @keyframes marquee {
   0% {
