@@ -107,8 +107,8 @@ export default function Sidebar() {
             <MapPin className="w-3.5 h-3.5 text-accent" />
             {personalDetails.location}
           </span>
-          <span>•</span>
-          <span className="text-zinc-300">Open for Hire</span>
+          {/* <span>•</span>
+          <span className="text-zinc-300">Open for Hire</span> */}
         </div>
 
         {/* Action Buttons */}
@@ -129,7 +129,7 @@ export default function Sidebar() {
             className="w-full py-3 px-4 rounded-2xl bg-zinc-900 border border-white/10 text-white font-bold text-xs uppercase tracking-wider hover:border-accent hover:bg-zinc-800 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2"
           >
             <Mail className="w-4 h-4 text-accent shrink-0" />
-            <span>Hire Me</span>
+            <span>Coffee chat?</span>
           </a>
         </div>
 

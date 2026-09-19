@@ -28,10 +28,8 @@ export default function About() {
       {/* Highlights Grid (4 Clean Items) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
         {[
-          'Shopify Theme & Custom Liquid Specialist',
-          'Full Stack Web Application Architecture',
-          'Next.js 16 App Router & React 19',
-          'Custom Shopify App & Storefront Integration'
+          'Shopify Theme & Custom Liquid Expert',
+          'Full Stack Web Application Specialist'
         ].map((item, idx) => (
           <div key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-zinc-200 p-3 rounded-xl card-hover-effect cursor-pointer">
             <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />

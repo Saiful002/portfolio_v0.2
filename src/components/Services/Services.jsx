@@ -62,14 +62,14 @@ export default function Services() {
                   ))}
                 </ul>
               </div>
-
+              {/* 
               <a
                 href="#contact"
                 className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-accent group-hover:translate-x-1 transition-transform"
               >
                 <span>Request Service</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
+              </a> */}
             </motion.div>
           );
         })}

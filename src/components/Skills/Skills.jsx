@@ -35,7 +35,7 @@ const techLogos = [
   { name: 'Firebase', Icon: SiFirebase, color: '#FFCA28' },
   { name: 'Git', Icon: SiGit, color: '#F05032' },
   { name: 'Figma', Icon: SiFigma, color: '#F24E1E' },
-  { name: 'PostgreSQL', Icon: SiPostgresql, color: '#4169E1' }
+  { name: 'SQL', Icon: SiPostgresql, color: '#4169E1' }
 ];
 
 export default function Skills() {
@@ -60,11 +60,10 @@ export default function Skills() {
           <button
             key={cat.title}
             onClick={() => setActiveTab(idx)}
-            className={`px-3.5 py-2 rounded-xl text-[11px] sm:text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
-              activeTab === idx
+            className={`px-3.5 py-2 rounded-xl text-[11px] sm:text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${activeTab === idx
                 ? 'bg-zinc-800 text-white border border-accent/60 font-bold shadow-md scale-105'
                 : 'bg-zinc-900 border border-white/10 text-[#8c9aa7] hover:text-white'
-            }`}
+              }`}
           >
             {cat.title}
           </button>

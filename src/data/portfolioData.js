@@ -4,8 +4,7 @@ export const personalDetails = {
   roles: [
     "Full Stack Developer",
     "Shopify Expert",
-    "WordPress Developer",
-    "Creative Web Engineer"
+    "Quick Learner"
   ],
   bio: "Passionate and experienced Full Stack & E-commerce Developer. With a strong foundation in modern web technologies, I craft sleek, high-performing web applications and custom e-commerce stores that blend visual excellence with seamless functionality.",
   longAbout: "Hello there! I'm Saiful Kabir Chowdhury, a dedicated Full Stack Web Developer and CSE Student. I specialize in building end-to-end web applications, custom Shopify themes, and bespoke WordPress solutions. My focus is on creating exceptional user experiences powered by clean code, intuitive UI/UX design, and dynamic animations. Whether crafting custom React/Next.js platforms or building high-converting Shopify storefronts, I turn complex ideas into digital reality.",
@@ -16,7 +15,7 @@ export const personalDetails = {
 
 export const statItems = [
   { label: "Years Experience", value: 3, suffix: "+" },
-  { label: "Projects Completed", value: 20, suffix: "+" },
+  { label: "Projects Completed", value: 70, suffix: "+" },
   { label: "Client Satisfaction", value: 100, suffix: "%" },
   { label: "Technologies Mastered", value: 15, suffix: "+" }
 ];
@@ -44,12 +43,11 @@ export const skillCategories = [
   {
     title: "Frontend Development",
     skills: [
-      { name: "React.js", level: 95 },
-      { name: "Next.js", level: 90 },
-      { name: "JavaScript (ES6+)", level: 95 },
-      { name: "Tailwind CSS", level: 95 },
-      { name: "HTML5 / CSS3", level: 98 },
-      { name: "GSAP & Framer Motion", level: 88 }
+      { name: "React.js", level: 90 },
+      { name: "Next.js", level: 85 },
+      { name: "JavaScript (ES6+)", level: 90 },
+      { name: "Tailwind CSS", level: 85 },
+      { name: "HTML5 / CSS3", level: 95 },
     ]
   },
   {
@@ -57,18 +55,18 @@ export const skillCategories = [
     skills: [
       { name: "Node.js", level: 85 },
       { name: "Express.js", level: 88 },
-      { name: "MongoDB", level: 85 },
-      { name: "PostgreSQL", level: 78 },
+      { name: "MongoDB", level: 70 },
+      { name: "SQL", level: 78 },
       { name: "Firebase", level: 82 },
-      { name: "REST & GraphQL APIs", level: 90 }
+      { name: "REST & GraphQL APIs", level: 70 }
     ]
   },
   {
     title: "CMS & E-Commerce",
     skills: [
-      { name: "Shopify & Liquid", level: 92 },
-      { name: "WordPress & WooCommerce", level: 90 },
-      { name: "Elementor & Custom Widgets", level: 92 }
+      { name: "Shopify & Liquid", level: 98 },
+      { name: "WordPress & WooCommerce", level: 80 },
+      { name: "Elementor & Custom Widgets", level: 85 }
     ]
   },
   {
