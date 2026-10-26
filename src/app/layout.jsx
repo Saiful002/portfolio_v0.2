@@ -16,42 +16,96 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://port-folio-five-cyan.vercel.app'),
-  title: 'Saiful Kabir Chowdhury | Full Stack & Shopify Developer',
+  metadataBase: new URL("https://saifulkabirchowdhury.vercel.app"),
+
+  title: {
+    default: "Saiful Kabir Chowdhury | Full Stack & Shopify Developer",
+    template: "%s | Saiful Kabir Chowdhury",
+  },
+
   description:
-    'Professional portfolio website showcasing full-stack development, Shopify, WordPress, and modern web solutions.',
+    "Saiful Kabir Chowdhury is a Full Stack Developer and Shopify Expert specializing in modern, responsive, SEO-friendly, and high-performance web applications and eCommerce solutions.",
+
   keywords: [
-    'Saiful Kabir Chowdhury',
-    'Full Stack Developer',
-    'Shopify Developer',
-    'WordPress Developer',
-    'Next.js Portfolio',
-    'Web Developer Bangladesh',
+    "Saiful Kabir Chowdhury",
+    "Saiful Kabir",
+    "Full Stack Developer",
+    "Full Stack Developer Bangladesh",
+    "Web Developer Bangladesh",
+    "Shopify Developer",
+    "Shopify Developer Bangladesh",
+    "WordPress Developer",
+    "WordPress Developer Bangladesh",
+    "Next.js Developer",
+    "React Developer",
+    "JavaScript Developer",
+    "Frontend Developer",
+    "Backend Developer",
+    "eCommerce Developer",
+    "Freelance Web Developer",
+    "Web Application Developer",
+    "Portfolio Saiful Kabir Chowdhury",
   ],
-  authors: [{ name: 'Saiful Kabir Chowdhury' }],
+
+  authors: [
+    {
+      name: "Saiful Kabir Chowdhury",
+      url: "https://saifulkabirchowdhury.vercel.app",
+    },
+  ],
+
+  creator: "Saiful Kabir Chowdhury",
+  publisher: "Saiful Kabir Chowdhury",
+
+  category: "technology",
+
+  alternates: {
+    canonical: "https://saifulkabirchowdhury.vercel.app/",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
   openGraph: {
-    title: 'Saiful Kabir Chowdhury | Full Stack & Shopify Developer',
+    title: "Saiful Kabir Chowdhury | Full Stack & Shopify Developer",
     description:
-      'Professional portfolio website showcasing full-stack development, Shopify, WordPress, and modern web solutions.',
-    url: 'https://port-folio-five-cyan.vercel.app/',
-    siteName: 'Saiful Kabir Chowdhury Portfolio',
+      "Full Stack, Shopify, and WordPress Developer building modern, responsive, SEO-friendly, and high-performance websites and web applications.",
+    url: "https://saifulkabirchowdhury.vercel.app/",
+    siteName: "Saiful Kabir Chowdhury",
+    type: "website",
+    locale: "en_US",
+
     images: [
       {
-        url: '/images/profile.jpg',
+        url: "/images/dp.jpg",
         width: 1200,
         height: 630,
-        alt: 'Saiful Kabir Chowdhury Portfolio',
+        alt: "Saiful Kabir Chowdhury - Full Stack & Shopify Developer",
       },
     ],
-    locale: 'en_US',
-    type: 'website',
   },
+
   twitter: {
-    card: 'summary_large_image',
-    title: 'Saiful Kabir Chowdhury | Full Stack & Shopify Developer',
+    card: "summary_large_image",
+    title: "Saiful Kabir Chowdhury | Full Stack & Shopify Developer",
     description:
-      'Professional portfolio website showcasing full-stack development, Shopify, WordPress, and modern web solutions.',
-    images: ['/images/profile.jpg'],
+      "Full Stack, Shopify, and WordPress Developer specializing in modern web applications and eCommerce solutions.",
+    images: ["/images/dp.jpg"],
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 
