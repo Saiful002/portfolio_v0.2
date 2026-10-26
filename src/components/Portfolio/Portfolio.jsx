@@ -2,10 +2,62 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Sparkles } from 'lucide-react';
+import { ExternalLink, Key, Copy, Check } from 'lucide-react';
 import Image from 'next/image';
 import { projectsData } from '@/data/portfolioData';
 import { GithubIcon } from '../SocialIcons/SocialIcons';
+
+function StorePasswordBadge({ password }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    try {
+      if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(password);
+      } else if (typeof document !== 'undefined') {
+        const textarea = document.createElement('textarea');
+        textarea.value = password;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+      }
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // ignore clipboard error
+    }
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={handleCopy}
+      title="Store Password (Click to copy)"
+      className="group/pwd inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-zinc-950/80 hover:bg-zinc-900 border border-white/10 hover:border-accent/40 text-xs font-medium text-zinc-300 hover:text-white transition-all cursor-pointer shadow-sm select-none"
+    >
+      <Key className="w-3.5 h-3.5 text-accent group-hover/pwd:rotate-12 transition-transform" />
+      <span className="text-[11px] text-[#8c9aa7] font-medium">Password:</span>
+      <span className="px-1.5 py-0.5 rounded-md bg-zinc-900 font-mono text-accent font-bold tracking-wider text-[11px] border border-white/10 group-hover/pwd:border-accent/30">
+        {password}
+      </span>
+      <span className="ml-0.5 text-zinc-400 group-hover/pwd:text-white transition-colors">
+        {copied ? (
+          <span className="inline-flex items-center gap-0.5 text-[10px] text-emerald-400 font-semibold">
+            <Check className="w-3 h-3 text-emerald-400" />
+            <span>Copied!</span>
+          </span>
+        ) : (
+          <Copy className="w-3 h-3 group-hover/pwd:text-accent transition-colors" />
+        )}
+      </span>
+    </button>
+  );
+}
 
 const categories = ['All', 'Full Stack', 'Shopify'];
 
@@ -98,7 +150,7 @@ export default function Portfolio() {
               </div>
 
               {/* Action Links */}
-              <div className="pt-3 border-t border-white/5 flex items-center justify-between">
+              <div className="pt-3 border-t border-white/5 flex items-center justify-between gap-2 flex-wrap sm:flex-nowrap">
                 {project.githubUrl ? (
                   <a
                     href={project.githubUrl}
@@ -109,14 +161,18 @@ export default function Portfolio() {
                     <GithubIcon className="w-3.5 h-3.5 text-accent" />
                     <span>Source Code</span>
                   </a>
-                ) : <div />}
+                ) : (project.storePassword || project.password) ? (
+                  <StorePasswordBadge password={project.storePassword || project.password} />
+                ) : (
+                  <div />
+                )}
 
                 {project.liveUrl && project.liveUrl !== '#' ? (
                   <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-accent text-[#08090b] text-xs font-bold uppercase tracking-wider shadow-md hover:scale-105 transition-all"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-accent text-[#08090b] text-xs font-bold uppercase tracking-wider shadow-md hover:scale-105 transition-all ml-auto sm:ml-0"
                   >
                     <span>Live Demo</span>
                     <ExternalLink className="w-3 h-3" />

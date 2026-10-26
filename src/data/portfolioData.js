@@ -82,51 +82,38 @@ export const skillCategories = [
 
 export const projectsData = [
   {
-    id: "gub-idpc-2025",
-    title: "GUB IDPC 2025 Official Platform",
+    id: "unisync-campus-room-booking",
+    title: "UniSync : Campus Room Booking Platform",
     category: "Full Stack",
-    description: "Official web platform for the International Debate & Programming Contest 2025 at Green University of Bangladesh. Features contest countdowns, registration flow, interactive dropdowns, and schedule details.",
-    longDescription: "The GUB IDPC 2025 platform serves as the central hub for contestants, debaters, and sponsors. Built with Next.js and Tailwind CSS, it features a fluid responsive UI, student registration modal, real-time schedule grid, and custom dropdown menus.",
-    technologies: ["Next.js", "Tailwind CSS", "JavaScript", "Vercel"],
-    image: "/images/gub_idpc.jpg",
-    liveUrl: "https://gub-idpc-2025.vercel.app/",
-    githubUrl: "https://github.com/Saiful002/GUB_IDPC_2025",
+    description:
+      "A full-stack campus room booking and scheduling platform designed for university students, faculty, and administrators. It provides real-time room availability, reservation management, booking history, administrator support, and an integrated AI assistant.",
+    longDescription:
+      "UniSync is a modern university campus room booking and management platform built to simplify classroom, seminar room, and lab reservations. Users can check live room availability, select booking dates, submit reservation requests, track approved or pending bookings, contact administrators, and use the integrated AI chatbot for room and schedule-related assistance. The platform also includes a dedicated admin portal for managing rooms, users, reservations, pending requests, and overall booking activity through a centralized dashboard.",
+    technologies: [
+      "Next.js",
+      "React",
+      "JavaScript",
+      "Tailwind CSS",
+      "REST API",
+      "SQL",
+      "Vercel"
+    ],
+    image: "/images/UniSync Neon Campus Booking Platform.png",
+    liveUrl: "https://uni-sync-client-seven.vercel.app/",
+    githubUrl: "https://github.com/Saiful002/UniSync",
     featured: true
   },
   {
-    id: "round-trip",
-    title: "Round Trip - Travel Platform",
-    category: "Full Stack",
-    description: "Comprehensive full-stack travel booking application allowing users to explore destinations, manage itineraries, and make fast bookings.",
-    longDescription: "Round Trip is a feature-packed travel portal built with JavaScript, MongoDB, Express.js, and Firebase Authentication. It offers secure user sessions, interactive map previews, dynamic flight/hotel search, and seamless DB connectivity.",
-    technologies: ["JavaScript", "MongoDB", "Express.js", "Firebase", "React"],
-    image: "/images/round_trip.jpg",
-    liveUrl: "https://github.com/Saiful002/Round-Trip",
-    githubUrl: "https://github.com/Saiful002/Round-Trip",
-    featured: true
-  },
-  {
-    id: "aurum-luxe-shopify",
-    title: "Aurum Luxe - Shopify Store",
+    id: "sybratic-wellness-shopify",
+    title: "Sybratic Wellness - Shopify Store",
     category: "Shopify",
-    description: "Luxury custom Shopify e-commerce theme with high-converting product showcases, sliding cart drawer, and mobile-first Liquid templates.",
-    longDescription: "A high-end e-commerce store built on Shopify using custom Liquid templates, Tailwind styling, AJAX cart drawer, filtering system, and Core Web Vitals optimization.",
-    technologies: ["Shopify", "Liquid", "JavaScript", "Tailwind CSS"],
-    image: "/images/shopify_store.jpg",
-    liveUrl: "#",
-    githubUrl: "https://github.com/Saiful002",
-    featured: true
-  },
-  {
-    id: "portfolio-v02",
-    title: "Developer Portfolio v0.2",
-    category: "Full Stack",
-    description: "Interactive creative developer portfolio with GSAP animations, Three.js 3D backdrop, Lenis smooth scrolling, and dark luxury aesthetic.",
-    longDescription: "My personal developer showcase featuring modern web design practices, JavaScript architecture, dark glassmorphism styling, and custom animations.",
-    technologies: ["Next.js", "React", "JavaScript", "GSAP", "Tailwind CSS"],
-    image: "/images/profile.jpg",
-    liveUrl: "https://port-folio-five-cyan.vercel.app/",
-    githubUrl: "https://github.com/Saiful002/PortFolio",
+    description: "Custom Shopify wellness and supplement store featuring a product recommendation quiz, detailed product pages, responsive layouts, and a clean healthcare-focused shopping experience.",
+    longDescription: "A custom Shopify e-commerce store developed for Sybratic Wellness with a professional health and supplement-focused design. The store includes an interactive product quiz system, custom product layouts, wellness benefit sections, testimonials, FAQs, product recommendations, responsive mobile optimization, and conversion-focused shopping functionality.",
+    technologies: ["Shopify", "Liquid", "JavaScript", "CSS"],
+    image: "/images/Sybratic Wellness Lab Showcase.png",
+    liveUrl: "https://sybratic-swz6zhx4.myshopify.com/",
+    storePassword: "1", // Store password for Shopify protected storefront (replaces GitHub URL)
+    password: "1",
     featured: true
   }
 ];
