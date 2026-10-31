@@ -104,6 +104,36 @@ export const projectsData = [
     featured: true
   },
   {
+    id: "dsa-visualizer",
+    title: "DSA Visualizer : Interactive Data Structures & Algorithms Learning Platform",
+    category: "Frontend / Educational Platform",
+    description:
+      "An interactive Data Structures and Algorithms visualization platform designed to help users learn complex DSA concepts through animated visual representations, step-by-step execution, and practical code examples.",
+
+    longDescription:
+      "DSA Visualizer is an interactive learning platform built to make Data Structures and Algorithms easier to understand through visual demonstrations. Users can explore and visualize core concepts such as sorting algorithms, searching algorithms, data structures, graph algorithms, pathfinding, recursion, dynamic programming, and algorithm complexity. The platform focuses heavily on interactive animations so users can observe how each algorithm works step by step instead of relying only on theoretical explanations. It also includes supporting theory, pseudocode, complexity analysis, and implementation examples to help users strengthen their problem-solving and algorithmic thinking skills.",
+
+    technologies: [
+      "Next.js",
+      "React",
+      "JavaScript",
+      "Tailwind CSS",
+      "Data Structures",
+      "Algorithms",
+      "Algorithm Visualization",
+      "Vercel"
+    ],
+
+    image: "/images/Neon DSA Visualizer Dashboard.jpg",
+
+    liveUrl: "https://dsa-visualizer-002.vercel.app/",
+
+    githubUrl:
+      "https://github.com/Saiful002/Dsa-Visualizer/tree/main/dsa_visualizer",
+
+    featured: true
+  },
+  {
     id: "sybratic-wellness-shopify",
     title: "Sybratic Wellness - Shopify Store",
     category: "Shopify",
